@@ -9,50 +9,60 @@
 	    <meta name="author" content="Kidd Dance">
 	    <link rel="icon" href="../../favicon.ico">
 	    <link rel="stylesheet" type="text/css" href="style.css" />
+	    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> -->
+
 	    <title>gravy every day</title>
 	</head>
   	
   	<body>
 	  	
-		<div class="container">
-		    
-		  <div class="blobs">
-		    <div class="liquid"></div>
-		    <div class="blob"></div>
-		    <div class="blob"></div>
-		    <div class="blob"></div>
-		    <div class="blob"></div>
-		    <div class="blob"></div>
-		    <div class="blob"></div>
-		    <div class="blob"></div>
-		    <div class="blob"></div>
-		    <div class="blob"></div>
-		    <div class="blob"></div>
-		    <div class="blob"></div>
-		    <div class="blob"></div>
-		    <div class="blob"></div>
-		    <div class="blob"></div>
-		    <div class="blob"></div>
-		  </div>   
-		  <h1 class="text">Gravy Every Day</h1>
-		</div>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				var slider = new gooSlider('body');
+				
+				var l1,l2;
+				$('body').click(function(){
+				var whut = ['#C9860F', '#332204', '#7F6330', '#4C3B1D', '#CC880F'];
+					var c =  whut[Math.floor(Math.random() * whut.length)];
+					// var c = 'hsla('+ (Math.floor(Math.random()*7) * 50) +',56%,68%,1)';
+					if(c != l1 && c != l2){
+						slider.wave(c, function(){});
+						l2 = l1;
+						l1 = c;
+					} else {
+						$('body').click();
+					}
+				});
+				
+				var count = 15,
+				    cur = 0;
+				function start(){
+				var whut = ['#C9860F', '#332204', '#7F6330', '#4C3B1D', '#CC880F'];
+					var c =  whut[Math.floor(Math.random() * whut.length)];
 
-		
+					slider.wave(c, function(){});
+					cur++;
+					if(cur<count){
+						setTimeout(function(){
+							start();
+						}, 1500)
+					}
+				}
+				start();
+			});
+		</script>
 
-		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="0">
-		  <defs>
-		    <filter id="goog">
-		      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-		      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-		      <feBlend in="SourceGraphic" in2="goo" />
-		    </filter>
-		    <filter id="goo">
-		      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-		      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-		      <feBlend in="SourceGraphic" in2="goo"/>
-		   </filter>
-		  </defs>
-		</svg>
+<div id="info">
+	<div>
+		<h1>GRAVY EVERY DAY</h1>
+	</div> 
+Click for more gravy
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://codepen.io/darrylhuffman/pen/zogYQW.js'></script>
+<script src="script.js"></script>
 
   	</body>
     
