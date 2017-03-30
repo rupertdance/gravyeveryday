@@ -15,12 +15,59 @@ html, body {
 	font-family: sans-serif;
 	
 	pointer-events: none;
-	-webkit-touch-callout: none;
+	/*-webkit-touch-callout: none;*/
+
     -webkit-user-select: none;
     -khtml-user-select: none;
      -moz-user-select: none;
      -ms-user-select: none;
     user-select: none
+}
+
+.showbox{
+	position: absolute;		
+    bottom: 25px;
+    margin: auto;
+    z-index: 2;
+    color: #ffffff;
+    font-size: 1.1em;
+    text-align: center;
+    font-family: helvetica;
+    padding: 10px 40px 10px 40px;
+
+    pointer-events: none;
+	/*-webkit-touch-callout: none;*/
+
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+    user-select: none
+}
+
+.image_container{
+	position: absolute;		
+    top: 25px;
+    
+    z-index: 2;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  text-align: center;
+
+  pointer-events: none;
+	/*-webkit-touch-callout: none;*/
+
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+    user-select: none
+}
+
+.image_container img{
+	width: 60%;
 }
 
 canvas {
